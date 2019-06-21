@@ -4,7 +4,7 @@
 
 A brick is an instance of `Pimcore\Extension\Document\Areabrick\AreabrickInterface` which can either be auto-loaded
 by saving the brick to a special namespace inside your bundle or by defining the brick as a service and adding it to the
-list of available bricks through a DI tag. The brick class is the only mandatory file for a brick, however most bricks
+list of available bricks through a ID tag. The brick class is the only mandatory file for a brick, however most bricks
 will at least implement a view template which is rendered in frontend and editmode.
 
 The templates itself are normal templates which are passed to the rendering engine. Therefore you can use all 
@@ -39,7 +39,7 @@ class Iframe implements AreabrickInterface
 > Please note that you need to clear the cache after you added a brick to the special namespace.
 
 If you need more control over the brick instance (e.g. because your brick has dependencies on other services or you
-want to specify the brick ID manually), you can add the service definition yourself and tag the service with the DI
+want to specify the brick ID manually), you can add the service definition yourself and tag the service with the ID
 tag `pimcore.area.brick`. Bricks defined manually will be excluded from the auto-registration, even if they're
 defined in the special namespace. Let's define our brick as above, but assume it needs access to a logger instance:
 
